@@ -1,0 +1,14 @@
+{
+  "name": "netscaler-auto-check",
+  "version": "1.0.0",
+  "description": "Automatically checks NetScaler status and exports to Excel",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "node-ssh": "^13.0.0",
+    "cron": "^4.0.0",
+    "exceljs": "^4.4.0"
+  }
+}
