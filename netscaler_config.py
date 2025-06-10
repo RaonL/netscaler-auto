@@ -5,7 +5,7 @@ import time
 
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
-NETSCALERNODE1 = "10.10.11.211"
+NETSCALERNODE1 = "x.x.x.211"
 NEW_PASSWORD = os.getenv("NEW_PASSWORD")
 if not NEW_PASSWORD:
     raise RuntimeError("NEW_PASSWORD environment variable not set")
@@ -13,13 +13,13 @@ if not NEW_PASSWORD:
 CERTNAME = "star.namutech.co.kr_2024"
 
 SF_VIPNAME = "SF_VIP"
-SF_VIP = "10.10.11.219"
+SF_VIP = "x.x.x.219"
 SF_SERVER1_NAME = "SF1_SRV"
-SF_SERVER1_IP = "10.10.11.28"
+SF_SERVER1_IP = "x.x.x.28"
 SF_STORENAME = "ywlee"
 
 LDAP_SERVER1_NAME = "AD1_SRV"
-LDAP_SERVER1_IP = "10.10.11.20"
+LDAP_SERVER1_IP = "x.x.x.20"
 LDAP_SVC_ACCOUNT = "administrator@namulab.com"
 LDAP_SVC_PASSWORD = os.getenv("LDAP_SVC_PASSWORD")
 if not LDAP_SVC_PASSWORD:
@@ -30,7 +30,7 @@ CTXGW_VIPNAME = "CTXGW_VIP"
 CTXGW_VIP = os.getenv("CTXGW_VIP")
 if not CTXGW_VIP:
     raise RuntimeError("CTXGW_VIP environment variable not set")
-STA1 = "https://10.10.11.23"
+STA1 = "https://x.x.x.23"
 
 SSO_DOMAIN = "namulab"
 
@@ -70,7 +70,7 @@ def main():
 
     print("\n=== 기존 구성 정리 (철저한 삭제) ===")
 
-    possible_ldap_policies = ["LDAP_POL", "10.10.11.20_LDAP_pol", "LDAP_Policy", "ldap_pol", "BASIC_LDAP_POL", "BASIC_LDAP"]
+    possible_ldap_policies = ["LDAP_POL", "x.x.x.20_LDAP_pol", "LDAP_Policy", "ldap_pol", "BASIC_LDAP_POL", "BASIC_LDAP"]
     for policy in possible_ldap_policies:
         ns.request("DELETE", f"/nitro/v1/config/authenticationpolicy/{policy}", desc=f"{policy} Advanced 정책 삭제", ignore_error=True)
         ns.request("DELETE", f"/nitro/v1/config/authenticationldappolicy/{policy}", desc=f"{policy} Basic 정책 삭제", ignore_error=True)
